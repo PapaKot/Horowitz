@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="content" title="Service"><services name="gallery"/><html/><photos name="gallery"/></module><module id="m2" name="meta" title="Meta Tags"><title/><keywords/><description/></module></modules><template id="default"><template id="service_detail"/></template></section>

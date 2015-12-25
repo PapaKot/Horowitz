@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<form title="Edit section" id="content_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+		<field type="image" name="gallery" label="Images" uri="/photos" baseURI="file:///userfiles/photo" max="50" hasTitle="hasTitle">
+			<param name="label" uri="/%IMG_NAME%.jpg?w=1280"/>
+			<param name="label" uri="/%IMG_NAME%_preview.jpg?h=150" preview="preview"/>
+		</field>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="save"/>
+		</buttonset>
+	</form>
+	<form id="content_form_settings" title="Settings" method="post" autocheck="autocheck" baseURI="file:///ap/xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+		<param name="row" uri="/@id"/>
+		<field type="text" name="tab_title" label="Tab title" size="40" uri="/@title"/>
+		<field type="text" name="form_title" label="Form title" size="40" uri="/form/@title"/>
+		<fieldset title="Adjusting Images">
+			<field type="text" name="imgNum" label="Max images number" size="3" uri="/form[@id='content_form']/field[@name='gallery']/@max"/>
+			<field type="text" name="previewSizeH" label="Thumbnail width (px)" size="4" maxlength="4"/>
+			<field type="text" name="previewSizeV" label="Thumbnail height (px)" size="4" maxlength="4"/>
+			<field type="text" name="previewSizeMax" label="Max size of a thumbnail long side" size="4" maxlength="4"/>
+			<field type="text" name="imgSizeMax" label="Max size of an image long side" size="4" maxlength="4"/>
+		</fieldset>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+</data>

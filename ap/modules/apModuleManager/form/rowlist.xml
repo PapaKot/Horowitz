@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rowlist pageSize="99" add="add" delete="delete">
+	<col name="title" header="Name tab" class="cntr"/>
+	<col name="name" header="Name module" class="cntr"/>
+	<col name="version" header="Version"/>
+	<col name="description" header="Description"/>
+	<col name="data" header="Date"/>
+	<buttons>
+		<button action="edit" title="Edit"/>
+		<button action="delete" title="Delete"/>
+		<button action="move" title="Move"/>
+	</buttons>
+</rowlist>

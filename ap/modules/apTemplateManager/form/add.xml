@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form id="template_add" title="Add template" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/template[@id='%TEMLATEID%']">
+	<field type="select" name="tpl[id]" label="template" uri="#template" check="empty"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="add"/>
+		<button type="submit" value="Apply" class="ok" action="apply_add"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>

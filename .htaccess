@@ -1,0 +1,8 @@
+DirectoryIndex index.php
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !^.*/ap/
+RewriteCond %{REQUEST_URI} !^.*/[^\/]+\.[a-zA-Z0-9]{1,4}$
+RewriteRule ^.*$ index.php

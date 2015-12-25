@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data><form title="Editing meta tags" id="meta_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+	<field type="text" name="title" label="Title" size="60" uri="/title"/>
+	<field type="text" name="keywords" label="Keywords" size="60" uri="/keywords"/>
+	<field type="text" name="description" label="Description" size="60" uri="/description"/>
+	<buttonset><button type="submit" value="Save" class="ok" action="save"/></buttonset>
+</form></data>

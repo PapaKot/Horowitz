@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form id="section_add" title="Section properties - %TITLE%" method="post" autocheck="autocheck" baseURI="file:///%PATH_STRUCT_CLIENT%?/structure%PATH%">
+	<field type="section_test_id" name="id_sec" size="50" label="ID" uri="/@id"/>
+	<field type="select" name="parent" label="Parent section"/>
+	<field type="sectionbyid" name="position" label="position"/>
+	<field type="text" name="title" size="100" label="Title" uri="/@title" check="empty"/>
+	<field type="text" name="class" label="Class" uri="/@class"/>
+	<field type="checkbox" name="readonly" label="Read only" value="readonly" uri="/@readonly"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="save"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		<button type="submit" value="Delete" class="del" action="remove" onclick="if(window.confirm('Confirm the deletion')){this.form.action.value='remove';return true;}return false;"/>
+		<button type="submit" value="New template" class="add" action="newtpl" onclick="var v=prompt('This will create a template based on the settings section.\n Enter the name of the template:');if(v){this.form.title.value=v;return true;};return false;"/>
+	</buttonset>
+</form>

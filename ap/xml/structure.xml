@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><structure default="apData"><sec id="apSetup" title="Settings" readonly="readonly"><sec id="apCommon" title="Common"/><sec id="apUsers" title="Users"/><sec id="apSectionTemplate" title="Partition types"/></sec><sec id="apStruct" title="Structure"/><sec id="apData" title="Data"/></structure>

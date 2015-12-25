@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="articles" title="News"><list pageSize="10" pageParam="page" tagNameList="news" tagNameText="newsRow" sort="desc"/></module><module id="m2" name="meta" title="Meta Tags"/></modules><template id="default"><template id="news"/></template></section>

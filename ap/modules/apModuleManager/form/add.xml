@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form id="module_edit" title="Adding a module" method="post" autocheck="autocheck" baseURI="file:///ap/xml/data/%ID%.xml?/section/modules/module[@id='%MODULEID%']">
+	<field type="text" name="title" label="Title" size="40" check="empty" uri="/@title"/>
+	<field type="select" name="name" label="Module" uri="/@name" check="empty"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="add"/>
+		<button type="submit" value="Apply" class="ok" action="apply_add"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>

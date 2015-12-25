@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<site name="Horowitz Law Group" domain="horowitzlaw.us" email="skribl@mail.ru" phone="212.920.4503" address="61 Broadway, Suite 2125, New York" skype="test" facebook="test" twitter="test">
+	<mysql>
+		<con id="default" host="localhost" user="webgbdfs_171215" db="webgbdfs_171215" pref="horowitz_" pass="gTbcfLakC&amp;FJ"/>
+	</mysql>
+	<users>
+		<user login="admintula" pass="1a047d8454535ece79640f9d375f1669" name="Developer"/>
+		<user login="test" pass="098f6bcd4621d373cade4e832627b4f6" name="test"/>
+	</users>
+	<modules>
+		<module id="feedback" name="feedback" title="Feedback">
+			<form title="Request a call" id="feedback_form_box" method="post" autocheck="autocheck" baseURI="mysql://%CONNECT%/%TABLE%#" emailTpl="email_feedback" appendTo="/page">
+				<param name="action" value="call_us"/>
+				<param name="section" uri="section"/>
+				<param name="module" uri="module"/>
+				<param name="sort" uri="sort"/>
+				<field type="text" name="nameP" label="Name" mail="1" size="40"/>
+				<field type="text" name="phoneP" label="Phone" check="empty" mail="1" size="40"/>
+				<field type="text" name="second_nameP" label="Second name" size="40"/>
+				<buttongroup>
+					<button type="submit" value="Submit"/>
+				</buttongroup>
+				<good>&lt;p&gt;Thank you, your message has been sent!&lt;/p&gt;</good>
+				<fail>&lt;p&gt;Sorry, your message is not sent!&lt;/p&gt;</fail>
+			</form>
+		</module>
+		<module id="announce" name="announce" title="Announce">
+			<announce section="news" module="m1" name="news" sort="`sort` desc" size="6" parent="/page"/>
+			<announce section="staff" module="m1" size="99" name="staff" parent="/page" sort="`sort` desc"/>
+		</module>
+	</modules>
+	<meta name="description"></meta>
+	<meta name="keywords"></meta>
+</site>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="articles" title="Our staff"><list pageSize="10" pageParam="page" tagNameList="staff" tagNameText="staffRow" sort="asc"/></module><module id="m2" name="meta" title="staf-meta_tags"/></modules><template id="default"><template id="staff"/></template></section>

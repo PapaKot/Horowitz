@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!-- Форма редактирования -->
+	<form id="article_form_edit" title="Edit article" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%?id=%ID%">
+		<param name="row" uri="#id"/>
+		<field type="date" name="date" label="Date (MM.DD.YYYY)" check="empty" uri="#date"/>
+		<field type="text" name="title" label="Title" size="60" uri="#title"/>
+		<field type="textarea" name="announce" label="Announce" uri="#announce"/>
+		<field type="html" height="300" name="article" label="Content" uri="#article"/>
+		<field type="image" name="image" label="Image" baseURI="file:///userfiles/articles/%SECTION%" max="10">
+			<param name="image" uri="/%IMG_ID%.jpg?max=1024"/>
+			<param name="image" uri="/%IMG_ID%_preview.jpg?w=200" preview="preview"/>
+		</field>
+		<field type="checkbox" name="active" label="Public" uri="#active"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	
+	<!-- Форма добавления -->
+	<form id="article_form_add" title="Add article" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%">
+		<param name="section" uri="#section"/>
+		<param name="module" uri="#module"/>
+		<param name="sort" uri="#sort"/>
+		<field type="date" name="date" label="Date (MM.DD.YYYY)" check="empty" uri="#date"/>
+		<field type="text" name="title" label="Title" size="60" uri="#title"/>
+		<field type="textarea" name="announce" label="Announce" uri="#announce"/>
+		<field type="html" height="300" name="article" label="Content" uri="#article"/>
+		<field type="image" name="image" label="Image" baseURI="file:///userfiles/articles/%SECTION%" max="10">
+			<param name="image" uri="/%IMG_ID%.jpg?max=1024"/>
+			<param name="image" uri="/%IMG_ID%_preview.jpg?w=200" preview="preview"/>
+		</field>
+		<field type="checkbox" name="active" label="Public" uri="#active"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	
+	<!-- Список записей -->
+	<rowlist id="article_list" pageSize="10" sort="asc">
+		<actions>
+			<action name="new" title="Add" class="add"/>
+			<action name="delete" title="Remove selected"/>
+		</actions>
+		<col name="sort" header="#"/>
+		<col name="date" header="Date"/>
+		<col name="title" header="Title"/>
+		<col name="active"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist>
+	
+	<!-- Форма настроек -->
+	<form id="article_form_settings" title="Settings" method="post" autocheck="autocheck" baseURI="file:///ap/xml/data/%SECTION%.xml?/section/modules/module[@id='%MODULE%']">
+		<param name="row" uri="/@id"/>
+		<fieldset title="Active Page Settings">
+			<field type="text" name="titleAdd" label="Add form title" size="30" uri="/form[@id='article_form_add']/@title"/>
+			<field type="text" name="titleEdit" label="Edit form title" size="30" uri="/form[@id='article_form_edit']/@title"/>
+			<field type="text" name="titleList" label="List title" size="30" uri="/rowlist/@title"/>
+			<field type="text" name="listPageSize" label="Records per list page" size="30" uri="/rowlist/@pageSize"/>
+			<param name="imgNum" uri="/form[@id='article_form_add']/field[@name='image']/@max"/>
+			<field type="text" name="imgNum" label="Max images number" size="3" uri="/form[@id='article_form_edit']/field[@name='image']/@max"/>
+			<field type="select" name="adminSortorder" label="Order by" uri="/rowlist/@sort">
+				<option value="asc">Ascending</option>
+				<option value="desc">Descending</option>
+			</field>
+		</fieldset>
+		<fieldset title="Client Settings" baseURI="file:///xml/data/%SECTION%.xml?/section/modules/module[@id='%MODULE%']">
+			<field type="text" name="pageSize" label="Records per list page" size="3" uri="/list/@pageSize"/>
+			<field type="text" name="pageParam" label="Pagination parameter name" size="20" uri="/list/@pageParam"/>
+			<field type="checkbox" name="includeContent" label="Show full content in the list" uri="/list/@includeContent"/>
+			<field type="text" name="tplNameList" label="List tag name" size="10" uri="/list/@tagNameList"/>
+			<field type="text" name="tplNameText" label="Detail page tag name" size="10" uri="/list/@tagNameText"/>
+			<field type="select" name="clientSortorder" label="Order by" uri="/list/@sort">
+				<option value="asc">Ascending</option>
+				<option value="desc">Descending</option>
+			</field>
+		</fieldset>
+		<fieldset title="Data fields">
+			<field type="checkboxset" name="dataFields" inline="inline">
+				<option value="date">Date</option>
+				<option value="announce">Announce</option>
+				<option value="article">Content</option>
+				<option value="image">Images</option>
+			</field>
+			<field type="checkbox" name="hasTitle" value="hasTitle" label="Image caption" uri="/form[@id='article_form_edit']/field[@name='image']/@hasTitle"/>
+			<param name="announceType" uri="/form[@id='article_form_add']/field[@name='announce']/@type"/>
+			<field type="select" name="announceType" label="Announce field type" uri="/form[@id='article_form_edit']/field[@name='announce']/@type">
+				<option value="textarea">Textarea</option>
+				<option value="html">TinyMCE</option>
+			</field>
+			<field type="text" name="previewSizeH" label="Thumbnail width (px)" size="4" maxlength="4"/>
+			<field type="text" name="previewSizeV" label="Thumbnail height (px)" size="4" maxlength="4"/>
+			<field type="text" name="previewSizeMax" label="Max size of a thumbnail long side" size="4" maxlength="4"/>
+			<field type="text" name="imgSizeMax" label="Max size of an image long side" size="4" maxlength="4"/>
+		</fieldset>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+</data>

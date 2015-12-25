@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section>
+	<form id="common_form" method="post" autocheck="autocheck" baseURI="file:///xml/site.xml">
+		<field type="text" name="name" label="Name site" size="60" check="empty" uri="?/site/@name"/>
+		<field type="text" name="domain" label="Domain" size="30" check="empty" uri="?/site/@domain"/>
+		<field type="text" name="email" label="email" size="30" check="email" uri="?/site/@email"/>
+		<field type="text" name="phone" label="Phone" size="40" uri="?/site/@phone"/>
+		<field type="text" name="address" label="Address" size="40" uri="?/site/@address"/>
+		<field type="text" name="skype" label="Skype" size="40" uri="?/site/@skype"/>
+		<field type="text" name="facebook" label="Facebook" size="40" uri="?/site/@facebook"/>
+		<field type="text" name="twitter" label="Twitter" size="40" uri="?/site/@twitter"/>
+		<fieldset title="Default Meta Tags">
+			<field type="textarea" name="metadescription" label="Description" rows="2" uri="?/site/meta[@name='description']"/>
+			<field type="textarea" name="metakeywords" label="Keywords" rows="2" uri="?/site/meta[@name='keywords']"/>
+		</fieldset>
+		<fieldset title="MySQL" baseURI="file:///xml/site.xml?/site/mysql/con[@id='default']/">
+			<field type="text" name="mysql_host" label="Server" size="30" uri="@host"/>
+			<field type="text" name="mysql_user" label="User name" uri="@user"/>
+			<field type="password" name="mysql_password" label="Password" uri="@pass" saveIfNoEmpty="saveIfNoEmpty"/>
+			<field type="text" name="mysql_db" label="The database name" uri="@db"/>
+			<field type="text" name="mysql_table_prefix" label="Table prefix" uri="@pref"/>
+		</fieldset>
+		<buttonset>
+			<button action="save" type="submit" value="Save" class="ok"/>
+		</buttonset>
+	</form>
+	<modules>
+		<module id="m1" title="Project settings" name="apCommon"/>
+	</modules>
+</section>

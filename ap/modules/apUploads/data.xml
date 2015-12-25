@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+<!-- Форма редактирования -->
+<form id="article_form_edit" title="Change data" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%?id=%ID%">
+	<param name="row" uri="#id"/>
+	<field type="text" name="title" label="Title" size="60" uri="#title"/>
+	<field type="text" name="announce" label="Description" size="60" uri="#announce"/>
+	<field type="file" name="path" label="File" uri="#article"/>
+	<field type="image" name="image" label="Preview" baseURI="file:///userfiles/articles/%SECTION%" max="1">
+		<param name="image" uri="/%IMG_ID%_preview.jpg?max=200" preview="preview"/>
+	</field>
+	<field type="checkbox" name="active" label="Public" uri="#active"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="update"/>
+		<button type="submit" value="Apply" class="ok" action="apply_update"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>
+
+<!-- Форма добавления -->
+<form id="article_form_add" title="Add file" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%">
+	<param name="row" uri="mysql://default/catalog#id_article"/>
+	<param name="section" uri="#section"/>
+	<param name="module" uri="#module"/>
+	<param name="sort" uri="#sort"/>
+	<field type="text" name="title" label="Title" size="60" uri="#title"/>
+	<field type="text" name="announce" label="Description" size="60" uri="#announce"/>
+	<field type="file" name="path" label="File" uri="#article"/>
+	<field type="image" name="image" label="Preview" baseURI="file:///userfiles/articles/%SECTION%" max="1">
+		<param name="image" uri="/%IMG_ID%_preview.jpg?max=200" preview="preview"/>
+	</field>
+	<field type="checkbox" name="active" label="Public" uri="#active"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="add"/>
+		<button type="submit" value="Apply" class="ok" action="apply_add"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>
+
+<!-- Список записей -->
+<rowlist id="article_list" pageSize="10" sort="asc">
+	<actions>
+		<action name="new" title="Add" class="add"/>
+		<action name="delete" title="Delete"/>
+	</actions>
+	<col name="sort" header="№"/>
+	<place for="date"/>
+	<col name="file_link" header="Title"/>
+	<col name="announce" header="Description"/>
+	<col name="active"/>
+	<buttons>
+		<button action="edit" title="Edit"/>
+		<button action="delete" title="Delete"/>
+		<button action="move" title="Move"/>
+	</buttons>
+</rowlist>
+</data>

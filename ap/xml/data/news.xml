@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="apArticles" title="News"><form id="article_form_edit" title="Edit news" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%?id=%ID%">
+		<param name="row" uri="#id"/>
+		<field type="date" name="date" label="Date (MM-DD-YYYY)" check="empty" uri="#date"/>
+		<field type="text" name="title" label="Title" size="60" uri="#title"/>
+		<field type="textarea" name="announce" label="Announce" uri="#announce"/>
+		<field type="html" height="300" name="article" label="Content" uri="#article"/>
+		<field type="image" name="image" label="Image" baseURI="file:///userfiles/articles/%SECTION%" max="1">
+			<param name="image" uri="/%IMG_ID%.jpg?max=1280"/>
+			<param name="image" uri="/%IMG_ID%_preview.jpg?w=130&amp;h=130" preview="preview"/>
+		</field>
+		<field type="checkbox" name="active" label="Public" uri="#active"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form><form id="article_form_add" title="Add news" method="post" autocheck="autocheck" baseURI="mysql://default/%TABLE%">
+		<param name="section" uri="#section"/>
+		<param name="module" uri="#module"/>
+		<param name="sort" uri="#sort"/>
+		<field type="date" name="date" label="Date (MM-DD-YYYY)" check="empty" uri="#date"/>
+		<field type="text" name="title" label="Title" size="60" uri="#title"/>
+		<field type="textarea" name="announce" label="Announce" uri="#announce"/>
+		<field type="html" height="300" name="article" label="Content" uri="#article"/>
+		<field type="image" name="image" label="Image" baseURI="file:///userfiles/articles/%SECTION%" max="1">
+			<param name="image" uri="/%IMG_ID%.jpg?max=1280"/>
+			<param name="image" uri="/%IMG_ID%_preview.jpg?w=130&amp;h=130" preview="preview"/>
+		</field>
+		<field type="checkbox" name="active" label="Public" uri="#active"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form><rowlist id="article_list" pageSize="10" sort="desc">
+		<actions>
+			<action name="new" title="Add" class="add"/>
+			<action name="delete" title="Delete selected"/>
+		</actions>
+		<col name="sort" header="#"/>
+		<col name="date" header="Date"/>
+		<col name="title" header="Title"/>
+		<col name="active"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist></module><module id="m2" name="apMeta" title="Meta Tags"><form title="Editing meta tags" id="meta_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+	<field type="text" name="title" label="Title" size="60" uri="/title"/>
+	<field type="text" name="keywords" label="Keywords" size="60" uri="/keywords"/>
+	<field type="text" name="description" label="Description" size="60" uri="/description"/>
+	<buttonset><button type="submit" value="Save" class="ok" action="save"/></buttonset>
+</form></module></modules></section>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="apContent" title="Content"><form title="Edit section" id="content_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']"><field type="html" name="content" label="Content" uri="/html" height="350"/><field type="image" name="gallery" label="Images" uri="/photos" baseURI="file:///userfiles/services" max="50" hasTitle="hasTitle"><param name="label" uri="/%IMG_NAME%.jpg?max=1280"/><param name="label" uri="/%IMG_NAME%_preview.jpg?w=150" preview="preview"/></field><buttonset><button type="submit" value="Save" class="ok" action="save"/></buttonset></form></module><module id="m2" name="apMeta" title="Meta Tags"><form title="Editing meta tags" id="meta_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']"><field type="text" name="title" label="Title" size="60" uri="/title"/><field type="text" name="keywords" label="Keywords" size="60" uri="/keywords"/><field type="text" name="description" label="Description" size="60" uri="/description"/><buttonset><button type="submit" value="Save" class="ok" action="save"/></buttonset></form></module><module id="m3" name="apSubsections" title="Subsections"><form id="form_edit" title="Change data" method="post" autocheck="autocheck" baseURI="file:///xml/structure.xml?/structure/%PATH%sec[@id='%ID%']">
+		<param name="row" uri="/@id"/>
+		<field type="text" name="title" label="Title" size="60" uri="/@title" check="empty"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form><form id="form_add" title="Add subsection" method="post" autocheck="autocheck">
+		<field type="text" name="title" label="Title" size="60" check="empty"/>
+		<field type="text" name="alias" label="URL" size="40" check="sectionId" sectionTitleField="title"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form><rowlist id="list" pageSize="10" add="add" delete="delete">
+		<col name="sort" header="№"/>
+		<col name="title" header="Title"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist><template id="p2"/></module></modules></section>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section>
+	<modules>
+		<module id="m1" name="apContent" title="Contacts">
+			<form title="Edit section" id="content_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+				<field type="html" name="content" label="Content" uri="/html" height="350"/>
+				<buttonset>
+					<button type="submit" value="Save" class="ok" action="save"/>
+				</buttonset>
+			</form>
+		</module>
+		<module id="m3" name="apMeta" title="Meta Tags">
+			<form title="Editing meta tags" id="meta_form" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+				<field type="text" name="title" label="Title" size="60" uri="/title"/>
+				<field type="text" name="keywords" label="Keywords" size="60" uri="/keywords"/>
+				<field type="text" name="description" label="Description" size="60" uri="/description"/>
+				<buttonset>
+					<button type="submit" value="Save" class="ok" action="save"/>
+				</buttonset>
+			</form>
+		</module>
+	</modules>
+</section>

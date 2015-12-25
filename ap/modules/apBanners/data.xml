@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data> 
+<!-- Форма редактирования -->
+<form id="form_edit" title="Edit banner" method="post" autocheck="autocheck" baseURI="file:///xml/site.xml?/site/banners/banner[%POSITION%]">
+	<param name="width" uri="/@width"/>
+	<param name="height" uri="/@height"/>
+	<param name="mime" uri="/@mime"/>
+	<field type="text" name="title" label="Title" size="60" uri="/@title"/>
+	<field type="text" name="url" label="URL" size="60" uri="/@url"/>
+	<field type="banner" name="file" label="Banner (swf,jpg,gif)" uri="/@file"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="update"/>
+		<button type="submit" value="Apply" class="ok" action="apply_update"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>
+
+<!-- Форма добавления -->
+<form id="form_add" title="Add banner" method="post" autocheck="autocheck" baseURI="file:///xml/site.xml?/site/banners">
+	<param name="banner[width]" uri="#banner"/>
+	<param name="banner[height]" uri="#banner"/>
+	<param name="banner[mime]" uri="#banner"/>
+	<field type="text" name="banner[title]" label="Title" size="60" uri="#banner"/>
+	<field type="text" name="banner[url]" label="URL" size="60" uri="#banner"/>
+	<field type="banner" name="banner[file]" label="Banner (swf,jpg,gif)" uri="#banner"/>
+	<buttonset>
+		<button type="submit" value="Save" class="ok" action="add"/>
+		<button type="submit" value="Apply" class="ok" action="apply_add"/>
+		<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+	</buttonset>
+</form>
+
+<!-- Список записей -->
+<rowlist id="banner_list" pageSize="12">
+	<col name="sort" header="#"/>
+	<col name="title" header="Title"/>
+	<col name="url" header="URL"/>
+	<buttons>
+		<button action="edit" title="Edit"/>
+		<button action="delete" title="Delete"/>
+		<button action="move" title="Move"/>
+	</buttons>
+	<actions>
+		<action name="new" title="Add" class="add"/>
+		<action name="delete" title="Remove selected"/>
+	</actions>
+</rowlist>
+</data>

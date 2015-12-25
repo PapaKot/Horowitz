@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="content" title="Our prices"><html>&lt;p&gt;Nulla facilisi. Suspendisse mollis quam at metus imperdiet sagittis. Quisque mauris purus, facilisis vitae bibendum sit amet, consectetur quis felis. Donec sed gravida nunc. Etiam sollicitudin ante metus. Praesent condimentum lobortis erat sit amet suscipit. Phasellus accumsan eros eget magna tristique gravida.&lt;/p&gt;&#13;
+&lt;p&gt;Maecenas condimentum, sapien sit amet tempor egestas, turpis mauris dignissim purus, nec consectetur ipsum justo eu dui. Donec sed ante metus, eu posuere lacus.&lt;/p&gt;&#13;
+&lt;table border="0"&gt;&lt;caption&gt;Maecenas condimentum&lt;/caption&gt;&#13;
+&lt;tbody&gt;&#13;
+&lt;tr&gt;&lt;th scope="col"&gt;Sapien&lt;/th&gt;&lt;th scope="col"&gt;Tempor&lt;/th&gt;&lt;th scope="col"&gt;Egestas&lt;/th&gt;&lt;th scope="col"&gt;Turpis mauris&lt;/th&gt;&lt;/tr&gt;&#13;
+&lt;tr&gt;&#13;
+&lt;td&gt;volutpat massa&lt;/td&gt;&#13;
+&lt;td&gt;mollis quam at metus&lt;/td&gt;&#13;
+&lt;td&gt;+&lt;/td&gt;&#13;
+&lt;td&gt;25&lt;/td&gt;&#13;
+&lt;/tr&gt;&#13;
+&lt;tr&gt;&#13;
+&lt;td&gt;turpis mauris&lt;/td&gt;&#13;
+&lt;td&gt;accumsan eros eget magna&lt;/td&gt;&#13;
+&lt;td&gt;+&lt;/td&gt;&#13;
+&lt;td&gt;30&lt;/td&gt;&#13;
+&lt;/tr&gt;&#13;
+&lt;tr&gt;&#13;
+&lt;td&gt;donec sed&lt;/td&gt;&#13;
+&lt;td&gt;leo odio rutrum arcu&lt;/td&gt;&#13;
+&lt;td&gt;-&lt;/td&gt;&#13;
+&lt;td&gt;50&lt;/td&gt;&#13;
+&lt;/tr&gt;&#13;
+&lt;/tbody&gt;&#13;
+&lt;/table&gt;&#13;
+&lt;p&gt;Sed pretium aliquet turpis, a volutpat massa tincidunt eget. Sed semper, velit et consectetur viverra, leo odio rutrum arcu, ut tincidunt massa elit ac dolor.&lt;/p&gt;</html></module></modules><template id="default"><template id="services"/></template></section>

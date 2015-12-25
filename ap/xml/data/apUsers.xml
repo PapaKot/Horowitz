@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section>
+	<!-- Форма редактирования -->
+	<form id="user_form_edit" title="Edit user data" method="post" autocheck="autocheck" baseURI="file:///xml/site.xml?/site/users/user[%POSITION%]">
+		<param name="row" uri="/@login"/>
+		<field type="text" name="login" label="Login" size="40" check="empty" uri="/@login"/>
+		<field type="password" name="pass" label="Password" size="20" uri="/@pass" saveMD5="saveMD5" saveIfNoEmpty="saveIfNoEmpty"/>
+		<field type="text" name="name" label="Name" size="40" uri="/@name"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	
+	<!-- Форма добавления -->
+	<form id="user_form_add" title="Add user" method="post" autocheck="autocheck" baseURI="file:///xml/site.xml?/site/users">
+		<field type="text" name="user[login]" label="Login" size="40" check="empty" uri="#user"/>
+		<field type="password" name="user[pass]" label="Password" size="20" uri="#user" check="empty" saveMD5="saveMD5"/>
+		<field type="text" name="user[name]" label="Name" size="40" uri="#user"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	
+	<!-- Список записей -->
+	<rowlist id="user_list" pageSize="10" add="add" delete="delete">
+		<col name="sort" header="#"/>
+		<col name="login" header="Login"/>
+		<col name="name" header="Name"/>
+		<col name="active"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist>
+	
+	<!-- Модули -->
+	<modules>
+		<module id="m1" title="Users" name="apUsers"/>
+	</modules>
+</section>

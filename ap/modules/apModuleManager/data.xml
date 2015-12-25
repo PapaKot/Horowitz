@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<form id="form_add" title="Adding a module" method="post" autocheck="autocheck" baseURI="file:///%PATH_DATA_FILE_AP%?/section/modules/module[@id='%MODULEID%']">
+		<field type="text" name="title" label="Title" size="40" check="empty" uri="/@title"/>
+		<field type="select" name="name" label="Module" uri="/@name" check="empty"/>
+		<field type="checkbox" name="readonly" label="Editable" uri="/@readonly"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	<rowlist pageSize="99" add="add" delete="delete">
+		<col name="title" header="Title" class="cntr"/>
+		<col name="name" header="Module" class="cntr"/>
+		<col name="version" header="Version"/>
+		<col name="description" header="Description"/>
+		<col name="data" header="Date"/>
+		<col name="active" header="Editable"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist>
+</data>

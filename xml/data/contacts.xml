@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section><modules><module id="m1" name="content" title="Contacts"><html>&lt;address class="column_left"&gt;&#13;
+&lt;p class="strong"&gt;Address&lt;/p&gt;&#13;
+&lt;p&gt;61 Broadway, Suite 2125, New York&lt;br /&gt;&lt;span&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&#13;
+&lt;p class="strong"&gt;Phone&lt;/p&gt;&#13;
+&lt;p&gt;212.920.4503&lt;/p&gt;&#13;
+&lt;br /&gt;&#13;
+&lt;p class="strong"&gt;E-mail&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="mailto:jhorowitz@horowitzpllc.com"&gt;jhorowitz@horowitzpllc.com&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;/address&gt;</html></module><module id="m2" name="feedback" title="Feedback form"><form title="Feedback form" id="feedback_form" method="post" autocheck="autocheck" baseURI="mysql://%CONNECT%/%TABLE%#" emailTpl="email_feedback">
+		<param name="action" value="feedback"/>
+		<param name="section" uri="section"/>
+		<param name="module" uri="module"/>
+		<param name="sort" uri="sort"/>
+		<field type="text" name="name" label="Name *" check="empty" mail="1" size="40"/>
+		<field type="text" name="phone" label="Phone" check="empty" mail="1" size="40"/>
+		<field type="email" name="email" label="E-mail" check="email empty" mail="1" size="40"/>
+		<field type="textarea" name="message" label="Message" rows="6" size="40" mail="1"/>
+		<field type="recaptcha" sitekey="6Ld_TBMTAAAAACnbvx7dJ4PMcxl0mu1KI8mu3N-b" secret="6Ld_TBMTAAAAAFYp1uBORWB_uup3lt8kj2ioJtbu" name="g-recaptcha-response" label="reCAPTCHA"/>
+		<buttongroup>
+			<button type="submit" value="Submit"/>
+			<button type="reset" value="Reset"/>
+		</buttongroup>
+	<good>&lt;p&gt;Your message has been sent&lt;/p&gt;</good><fail>&lt;p&gt;Your message was not sent&lt;/p&gt;</fail></form></module><module id="m3" name="meta" title="Meta tags"/></modules><template id="default"><template id="contacts"/><template id="form"/></template></section>

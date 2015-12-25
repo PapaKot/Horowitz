@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<rowlist id="feedback_list_fields" title="List of fields" pageSize="10" sort="asc" add="add" delete="delete">
+		<col name="sort" header="#"/>
+		<col name="type" header="Field type"/>
+		<col name="label" header="Field title"/>
+		<buttons>
+			<button action="edit" title="Edit"/>
+			<button action="delete" title="Delete"/>
+			<button action="move" title="Move"/>
+		</buttons>
+	</rowlist>
+	<form title="Feedback form" id="feedback_form" method="post" autocheck="autocheck" baseURI="mysql://%CONNECT%/%TABLE%#">
+		<param name="action" value="feedback"/>
+		<param name="section" uri="section"/>
+		<param name="module" uri="module"/>
+		<param name="sort" uri="sort"/>
+		<field type="text" name="name" label="Name" check="empty" mail="name" size="40"/>
+		<field type="text" name="phone" label="Phone" check="empty" mail="phone" size="40"/>
+		<field type="email" name="email" label="E-mail" check="email empty" mail="email" size="40"/>
+		<field type="textarea" name="message" label="Message text" rows="6" size="40" mail="message"/>
+		<field type="captcha" name="captcha" label="Enter the result of the expression from picture (numbers)" show="1" check="empty"/>
+		<buttongroup>
+			<button type="submit" value="Submit"/>
+			<button type="reset" value="Reset"/>
+		</buttongroup>
+	</form>
+	<form id="feedback_addForm" title="Add Field" method="post" autocheck="autocheck">
+		<field type="text" name="label" label="Title" size="40" check="empty"/>
+		<field type="select" name="type" label="Type" event="onchange" size="40">
+			<option value="text">Text</option>
+			<option value="email">E-mail</option>
+			<option value="password">Password</option>
+			<option value="textarea">Textarea</option>
+		</field>
+		<field type="checkbox" name="check" label="Compulsory" size="40" uri="/@check"/>
+		<field type="checkbox" name="mail" label="Add a field in the e-mail notification" size="40" uri="/@mail"/>
+		<field type="text" name="size" label="The length of the display field" size="5" uri="/@size"/>
+		<field type="text" name="rows" label="Text area height" size="5" uri="/@rows"/>
+		<field type="text" name="uri" label="Database field name" size="40" uri="/@uri"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="add"/>
+			<button type="submit" value="Apply" class="ok" action="apply_add"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	<form id="feedback_editForm" title="Editing fields" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']/form[@id='feedback_form']/field[@name='%FID%']">
+		<field type="text" name="label" label="Title" size="40" uri="/@label"/>
+		<field type="select" name="type" label="Type" size="40" event="onchange" uri="/@type">
+			<option value="text">Text</option>
+			<option value="email">E-mail</option>
+			<option value="password">Password</option>
+			<option value="textarea">Textarea</option>
+		</field>
+		<field type="checkbox" name="check" label="Compulsory" size="40" uri="/@check"/>
+		<field type="checkbox" name="mail" label="Add a field in the e-mail notification" size="40" uri="/@mail"/>
+		<field type="text" name="size" label="The length of the display field" size="5" uri="/@size"/>
+		<field type="text" name="rows" label="Text area height" size="5" uri="/@rows"/>
+		<field type="text" name="uri" label="Database field name" size="40" uri="/@uri"/>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+	<form id="feedback_form_settings" title="Settings" method="post" autocheck="autocheck" baseURI="file:///xml/data/%ID%.xml?/section/modules/module[@id='%MD%']">
+		<param name="row" uri="/@id"/>
+		<fieldset title="General settings">
+			<field type="text" name="tab_title" label="Title" size="40" uri="file:///ap/xml/data/%ID%.xml?/section/modules/module[@id='%MD%']/@title"/>
+			<field type="text" name="form_title" label="Form title" size="40" uri="/form/@title"/>
+			<field type="checkbox" name="form_capcha" label="Use check CAPTCHA" uri="/form/field[@type='captcha']/@show"/>
+			<field type="text" name="form_class" label="Class for form tag" size="20" uri="/form/@class"/>
+			<field type="text" name="form_id" label="Id for form tag" size="20" uri="/form/@id"/>
+			<field type="html" name="form_mess_ok" label="Message form a successful treatment" uri="/form/good" height="300" />
+			<field type="html" name="form_mess_fail" label="Report form for unsuccessful treatment" uri="/form/fail" height="300" />
+		</fieldset>
+		<fieldset title="Email notification settings">
+			<field type="text" name="form_email_title" label="Message subject" size="40" uri="/form/@theme"/>
+			<field type="text" name="form_email" label="E-mail Administrator / Manager (multiple separated by commas)" size="40" uri="/form/@email"/>
+			<field type="select" name="form_email_tpl" label="Mail template for e-mail" uri="/form/@emailTpl">
+				<option value="">...</option>
+			</field>
+			<field type="checkbox" rel="userMail" name="form_send_user" label="Send email notification to the user" uri="/form/@sendUser"/>
+			<field type="text" rel="userMail" name="form_email_title_user" label="Subject of the letter to the user" size="40" uri="/form/@themeUser"/>
+			<field type="select" rel="userMail" name="form_email_tpl_user" label="Mail template for the e-mail user" uri="/form/@emailTplUser">
+				<option value="">...</option>
+			</field>
+		</fieldset>
+		<fieldset title="Setting database fields">
+			<field type="checkbox" rel="saveDB" name="form_save_db" label="Storing fields in database" uri="/form/@dbSave"/>
+			<field type="select" rel="saveDB" name="form__db_name_connect" label="Name the database connection" size="40" uri="/form/@dbConnect">
+				<option value="">...</option>
+			</field>
+			<field type="select" rel="saveDB" name="form_db_name_table" label="Name of table" uri="/form/@dbTable">
+				<option value="">...</option>
+			</field>
+		</fieldset>
+		<buttonset>
+			<button type="submit" value="Save" class="ok" action="update"/>
+			<button type="submit" value="Apply" class="ok" action="apply_update"/>
+			<button type="submit" value="Cancel" class="cancel" action="cancel"/>
+		</buttonset>
+	</form>
+</data>
