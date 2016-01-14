@@ -4,8 +4,8 @@
 	<sec title="Services" id="services" class="menu"><sec id="service_1" title="H. Rackham"/><sec id="service_2" title="The standard Lorem Ipsum passage"/><sec id="service_3" title="Third service"/><sec title="service-detale-test" id="service-detale-test"/></sec>
 	<sec title="Our prices" id="prices" class="menu"/>
 	<sec title="About the company " id="about" class="menu"/>
-	<sec title="News" id="news" class="menu"/>
-	<sec title="Our staff" id="staff" class="menu"/>
+	
+	<sec title="News" id="news"/><sec title="Our staff" id="staff" class="menu"/>
 	<sec title="Contacts us" id="contacts" class="menu"/>
 	<sec title="Site Map" id="sitemap"/>
 <sec title="Our clients" id="our_clients" class="menu"><sec title="Client" id="client1"/></sec></structure>
