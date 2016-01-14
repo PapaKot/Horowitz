@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<site name="Horowitz Law Group" domain="horowitzlaw.us" email="skribl@mail.ru" phone="212.920.4503" address="61 Broadway, Suite 2125, New York" skype="test" facebook="test" twitter="test">
+<site name="Horowitz Law Group" domain="horowitzlaw.us" email="skribl@mail.ru" phone="212.920.4503" address="61 Broadway, Suite 2125, New York">
 	<mysql>
 		<con id="default" host="localhost" user="webgbdfs_171215" db="webgbdfs_171215" pref="horowitz_" pass="gTbcfLakC&amp;FJ"/>
 	</mysql>
