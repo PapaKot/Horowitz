@@ -41,10 +41,12 @@
 <xsl:template match="section/news/row">
 	<article>
 		<xsl:apply-templates select="img/preview"/>
-		<a href="{@section}/row{@id}/"><xsl:apply-templates select="title"/></a>
-		<xsl:apply-templates select="date"/>		
+<!--		<a href="{@section}/row{@id}/">-->
+		<xsl:apply-templates select="title"/>
+<!--		</a>-->
+<!--		<xsl:apply-templates select="date"/>		-->
 		<xsl:apply-templates select="announce"/>
-		<p class="more"><noindex><a href="{@section}/row{@id}/" rel="nofollow">read more…</a></noindex></p>
+		<!--<p class="more"><noindex><a href="{@section}/row{@id}/" rel="nofollow">read more…</a></noindex></p>-->
 	</article>
 </xsl:template>
 

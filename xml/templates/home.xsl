@@ -67,10 +67,11 @@
 <!-- Анонсы новостей -->
 <xsl:template match="news[row]">
 	<section class="news">
-		<h1><xsl:value-of select="/page/structure/sec[@id='news']/@title"/></h1>
+<!--		<h1><xsl:value-of select="/page/structure/sec[@id='news']/@title"/></h1>-->
+            <h1>our competence</h1>
 		<div class="wrap">
 			<xsl:apply-templates select="row"/>
-			<p class="show_all"><a href="news/">All news</a></p>
+<!--			<p class="show_all"><a href="news/">All news</a></p>-->
 		</div>
 	</section>
 </xsl:template>
@@ -79,9 +80,10 @@
 		<article>
 			<xsl:apply-templates select="img/preview"/>
 			<xsl:apply-templates select="title"/>
-			<xsl:apply-templates select="date"/>
+			<p></p>
+<!--			<xsl:apply-templates select="date"/>-->
 			<xsl:apply-templates select="announce"/>
-			<p class="more"><a href="news/row{@id}/">Read more</a></p>
+<!--			<p class="more"><a href="news/row{@id}/">Read more</a></p>-->
 		</article>
 	</xsl:if>
 </xsl:template>

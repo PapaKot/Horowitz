@@ -60,7 +60,7 @@ try {
 			<br/>
 		</p>
 	</address>
-	<a href="#feedbackFormPopupBody" id="feedbackFormPopup" class="feedback">call us</a>
+	<a href="#feedbackFormPopupBody" id="feedbackFormPopup" class="feedback">Callback</a>
 </header>
 <nav>
 	<ul>
@@ -197,7 +197,7 @@ $(function(){
 		<address>
 			<xsl:value-of select="/page/site/@address"/>
 			<br /><br />
-			<a href="contacts/">see location on map</a>
+			<a href="contacts/">see location on mapp</a>
 		</address>
 	</xsl:if>
 </xsl:template>
