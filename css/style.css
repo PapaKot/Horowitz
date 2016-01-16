@@ -127,12 +127,12 @@ header .phone {
 }
 header .about {
     color: #4f4f4e;
-    font-size: 14px;
+    font-size: 29px;
     left: 50%;
     margin: 5px 0 0 -157px;
     position: absolute;
     text-align: left;
-    width: 315px;
+    width: 390px;
 }
 /*body > nav*/
 body > nav {
@@ -538,6 +538,10 @@ p.order-button a{
 p.show_all a:hover,
 p.order-button a:hover{text-decoration:none;}
 /*END_БЛОКИ ДЛЯ ГЛАВНОЙ*/
+#legals {
+width: 100%
+
+}
 
 /*Оформление для services*/
 section.services article {

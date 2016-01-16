@@ -44,7 +44,8 @@ try {
 <header>
 	<div class="logo"><a href="{$_base_url}"><img src="images/logo.png" width="252" alt="{/page/site/@name}"/></a></div>
 	<p class="about">
-		Moscow legal company is the legal profession, developed partnerships and business relationships both in Moscow and in the key regions of the country.
+		Labor, Construction<br/>  
+		&amp; Trial Attorneys
 	</p>
 	<address>
 		<p class="phone">
@@ -87,7 +88,9 @@ try {
 			</ol>
 			<a target="_blank" class="feedback" href="contacts/#feedback_form">write to us</a>
 		</nav>
+		
 	</div>
+	<p>The materials available at this web site are for informational purposes only and not for the purpose of providing legal advice.</p>
 </footer>
 <!--форма-->
 <div id="feedbackFormPopupBody_bg">
