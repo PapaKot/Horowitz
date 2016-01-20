@@ -39,10 +39,11 @@
 <!-- Анонсы новостей -->
 <xsl:template match="news[row]">
 	<section class="news">
-		<h3><xsl:value-of select="/page/structure/sec[@id='news']/@title"/></h3>
+	<h3>our competence</h3>
+<!--		<h3><xsl:value-of select="/page/structure/sec[@id='news']/@title"/></h3>-->
 		<div class="wrap">
 			<xsl:apply-templates select="row"/>
-			<p class="show_all"><a href="news/">All news</a></p>
+<!--			<p class="show_all"><a href="news/">All news</a></p>-->
 		</div>
 	</section>
 </xsl:template>
@@ -51,9 +52,10 @@
 		<article>
 			<xsl:apply-templates select="img/preview"/>
 			<xsl:apply-templates select="title"/>
-			<xsl:apply-templates select="date"/>
+			<p></p>
+<!--			<xsl:apply-templates select="date"/>-->
 			<xsl:apply-templates select="announce"/>
-			<p class="more"><noindex><a href="news/row{@id}/" rel="nofollow">Read more...</a></noindex></p>
+<!--			<p class="more"><noindex><a href="news/row{@id}/" rel="nofollow">Read more...</a></noindex></p>-->
 		</article>
 	</xsl:if>
 </xsl:template>
@@ -61,7 +63,7 @@
 	<time datetime="{@value}"><xsl:value-of select="text()"/></time>
 </xsl:template>
 <xsl:template match="news/row/title">
-	<div class="title"><a href="news/row{parent::*/@id}/"><xsl:value-of select="text()"/></a></div>
+	<div class="title"><xsl:value-of select="text()"/></div>
 </xsl:template>
 <xsl:template match="news/row/announce">
 	<p><xsl:value-of select="text()"/></p>

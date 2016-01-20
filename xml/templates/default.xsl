@@ -90,7 +90,9 @@ try {
 		</nav>
 		
 	</div>
-	<p>The materials available at this web site are for informational purposes only and not for the purpose of providing legal advice.</p>
+	<p></p>
+	<p>Copyright 2016 Horowitz Law Group, PLLC. All rights reserved.<br/>
+	The materials available at this web site are for informational purposes only and not for the purpose of providing legal advice.</p>
 </footer>
 <!--форма-->
 <div id="feedbackFormPopupBody_bg">
@@ -200,7 +202,7 @@ $(function(){
 		<address>
 			<xsl:value-of select="/page/site/@address"/>
 			<br /><br />
-			<a href="contacts/">see location on mapp</a>
+			<a href="contacts/">see location on the map</a>
 		</address>
 	</xsl:if>
 </xsl:template>

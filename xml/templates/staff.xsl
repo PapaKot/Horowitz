@@ -38,7 +38,7 @@
 
 <xsl:template match="section/staff/row">
 	<article>
-		<xsl:apply-templates select="img/preview"/>
+		<a href="{@section}/row{@id}/"><xsl:apply-templates select="img/preview"/></a>
 		<a href="{@section}/row{@id}/"><xsl:apply-templates select="title"/></a>		
 		<xsl:apply-templates select="announce"/>
 	</article>
