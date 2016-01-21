@@ -2,13 +2,11 @@
 <section>
 	<modules>
 		<module id="m1" name="content" title="Services">
-		<html>&lt;p&gt;&lt;img style="float: left; margin: 0px 15px 10px 0;" title="Services - &amp;quot;Services+&amp;quot;" src="userfiles/image/news1.jpg" alt="Services - &amp;quot;Services+&amp;quot;" width="226" height="280" /&gt;&lt;/p&gt;&#13;
-&lt;h3&gt;1914 translation by H. Rackham&lt;/h3&gt;&#13;
-&lt;p&gt;"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"&lt;/p&gt;&#13;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</html></module>
+		<html>&lt;p&gt;&lt;img style="margin: 2px 10px; float: left;" title="Horowitz Law Group" src="userfiles/image/rsz_balance-1-1237361.jpg" alt="Litigation Attorneys" width="158" height="119" /&gt;&amp;nbsp;Horowitz Law Group practice focuses on Labor, Construction and Litigation. This &amp;nbsp; specialization &amp;nbsp;allows us to provide high-quality legal services, particularly tailored to client's needs, given our experience and in-depth knowledge on these areas of law. Click on any practice area on the right to find out more about our services.&lt;/p&gt;&#13;
+&lt;p&gt;&amp;nbsp;We know that every case is different and requires a personalized approach. Call our office at (212) 920-4503 today to schedule a consultation.&lt;/p&gt;</html></module>
 		
 		
-	<module id="m5" name="meta" title="Meta tags"><title></title><keywords></keywords><description></description></module></modules>
+	<module id="m5" name="meta" title="Meta tags"><title/><keywords/><description/></module><module id="m3" name="articles" title="services"/></modules>
 	<template id="default">
 		<template id="services"/>
 	</template>
